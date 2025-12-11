@@ -21,6 +21,30 @@ npm run lint
 npm run build
 ```
 
+## 🔄 Deployment Status Workflow
+
+This repository includes a comprehensive Deployment Status Workflow that automatically triggers on pushes to the main branch. The workflow provides:
+
+### Features
+- **Pre-deployment checks**: Automated linting and testing
+- **Deployment tracking**: Creates GitHub issues for deployment monitoring
+- **Rollback preparation**: Generates complete rollback packages with checksums
+- **Post-deployment management**: Updates labels and closes tracking issues
+
+### Workflow Jobs
+1. **pre-deployment**: Quality checks and issue creation
+2. **rollback-preparation**: Creates rollback artifacts and documentation
+3. **post-deployment**: Final status updates and issue closure
+
+### Rollback Package Contents
+- Executable rollback script with error handling
+- Configuration backups (package.json, package-lock.json)
+- Dependency verification scripts
+- Comprehensive rollback documentation
+- SHA256 checksums for integrity verification
+
+The workflow ensures every deployment is tracked, documented, and fully reversible with 30-day artifact retention.
+
 ## 📊 API Endpoints
 
 ### Health & Status
@@ -127,8 +151,9 @@ mcpmark-cicd/
 - **Test Coverage**: >90% test coverage
 - **Code Quality**: ESLint and Prettier integration
 - **Performance**: Optimized for fast response times
+- **Deployment Automation**: Comprehensive CI/CD workflow with rollback capabilities
 
-## 🔧 Development
+## 🛠️ Development
 
 ### Adding New Features
 
@@ -173,6 +198,7 @@ npm run test:coverage      # Verify test coverage
 - Deployment status: `http://localhost:3000/status/deployment`
 - Test coverage: `coverage/lcov-report/index.html`
 - Memory usage monitoring via health endpoint
+- Deployment tracking via GitHub issues
 
 ## 📝 API Examples
 
@@ -225,4 +251,4 @@ MIT License - See LICENSE file for details.
 
 ---
 
-**Modern Node.js** | **Fast & Lightweight** | **Production Ready**
+**Modern Node.js** | **Fast & Lightweight** | **Production Ready** | **Automated Deployment**
